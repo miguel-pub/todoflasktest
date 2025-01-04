@@ -36,7 +36,7 @@ class Users(Resource):
         args = user_args.parse_args()
         user = UserModel(name=args["name"], email=args["email"])
         db.session.add(user)
-        db.session.commit
+        db.session.commit()
         users = UserModel.query.all()
         return users, 201
 
